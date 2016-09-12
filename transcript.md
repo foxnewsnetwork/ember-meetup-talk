@@ -5,24 +5,25 @@ Here is a rough outline of my talk.
 ## Outline / transcript
 - Introduce the problem of state
   - preamble
-    * let's talk about state. (!slide with bad code) states and managing states in your code is always bad, and seems to consistently lead to (!slide with Hickley), as Rich Hickly puts it, "complecting" your application until you inevitably reach the (!slide with meme matrix) 'technological debt singularity' where every one change or fix to the code-base causes your app to break in two or more other places - (!slide with hydra)
+    * let's talk about state. (!slide with bad code) states and managing states in your code is always bad, and seems to consistently lead to (!slide with Hickley), as Rich Hickey puts it, "complecting" your application until you inevitably reach the (!slide with meme matrix) 'technological debt singularity' where every one change or fix to the code-base causes your app to break in two or more other places - (!slide with hydra)
     * Add to that indeterministic async IO that drives these changes and you literally have the perfect formula for 21st pain and suffering. (!slide with scene from shining) I don't know about you, but my body is definitely not ready for that.
 
   - ‘If’, ‘set’, and ‘observe’ creates black magic code
-    * (!slide with home depot + tomster) so while ember.js is an awesome power tool for building ambitious application, (!slide with guy huffing paint, nailing foot, etc.) the very same tools it provides us can also just as quickly turn against us.
+    * so while ember.js is an awesome power tool for building ambitious application, the very same tools it provides us can also just as quickly turn against us.
     * (!slide with if-statement code) Consider the following innocent code snippet that mutates a controller state on an action
     * (!slide with clock) over time, given the natural tendency of code entropy, it might evolve to this (!slide with worse code)
     * (!slide with bus hitting developer) and suppose your tech lead happens to be on vacation when (!slide with deadline) some deadline or critical bug hits and some filthy (!slide with pointer at presenter) casual dev like me forces a commit like this in to solve our pressing issue (!slide with worst code of all)
-    * then things go back to normal... except now there's awful code in our code repo that only this guy (!slide with arrow again) knows how to work with - which means everyone now has to work around and on top of my trash, and bam, we now have in our app the only thing worse than broken code - cancerous code that works.
-    * Which, by the way, is like: (!slide with girl) it's like beginning an okcupid relationship on a lie; (!slide with catfish man) I pretend I'm a wealthy 6'3" millionaire of Angelo-Saxon descent with a passion for purses and shoes. And she pretends she's actually a woman (!slide with obvious serial killer in a wig)
+    * then things go back to normal... except now there's awful code in our code repo that only this guy (!slide with arrow again) knows how to work with - which means everyone now has to work around and on top of my trash, and bam, (!slide with broken code) we now have in our app the only thing worse than broken code - cancerous code that works.
+    * Which, by the way, is like:  it's like if I began my okcupid relationship on a lie; (!slide with catfish man) I pretend I'm a wealthy 6'3" millionaire of Angelo-Saxon descent with a passion for purses and shoes. And she pretends she's actually a woman (!slide with obvious serial killer in a wig)
 
   - Objects can’t properly encapsulate because `_privateDontTouch` will still be touched if things get desperate (what’s worse than broken code? Bad code that works)
-    * (!slide with private variable named `_privateDontTouch`) the fact of the matter is, if state is living everywhere and can be modified anywhere - (!slide with javascript) which it can because javascript is the peeping tom of languages, (!slide with resistance horse with NSFW text cropped out) so saying "no, don't look here and don't touch there" does nothing - it will inevitably get modified and entangled everywhere.
+    * (!slide with private variable named `_privateDontTouch`) the fact of the matter is, if state is living everywhere and can be modified anywhere - which it can because javascript is the peeping tom of languages. And while this is a tremendous strength in giving js flexibility, it's also a huge weakness as such great power comes with great responsibility. (!slide with resistance horse with NSFW text cropped out) And in times of great need or desparation, saying "no, don't look here and don't touch there" does nothing - it will inevitably get modified and entangled everywhere.
 
 - Sell the redux solution
   - preamble
-    * So what can we do? (!slide with haskell, monads, applicatives) I'm just kidding, we're not going to use haskell to write javascript.
-    * (!slide with redux) But the good folks at facebook did come up with a reasonably good solution with redux which has already been shimmed twice into ember.js with `ember-redux` by toranb and `ember-cli-redux` by altschools
+    * So what can we do? (!slide with glimmer) if we go back to 2014 during the latter days of the ember 1.x series, you'll recall ember had a problem with constant updates to the DOM resulted in extremely slow rendering and terrible frame-rates. The solution then was to look to react and assimilate their shadow dom into ember. (!slide with locutus of borg) Our glorious leader Yehuda and Canadian side-kick Godfrey jumped on this and thus glimmer 1 was born. 
+    * (!slide with resistance is futile) today, we're encountering a similar problem where micromanaging application state is becoming a headache, so let's go back to the react federation (!slide with brent spinner as data) and see if we can't appropriate some sort of Data management from them. After all, despite the friendliness of our hamster (!slide with borg tomster), we are the BORG of javascript frameworks and so it is our duty as upstanding borg citizens to assimiliate good stuff from other frameworks.
+    * (!slide with redux) Luckily, the good folks at facebook did come up with a reasonably good solution with redux which has already been shimmed twice into ember.js with `ember-redux` by toranb and `ember-cli-redux` by altschools
     * So what is redux? the TL;DR of it is that it is a...
   - God state pojo
     * (!slide with a big pojo) is god pojo that presents the entire mutable state of your app
