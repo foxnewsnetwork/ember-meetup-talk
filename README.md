@@ -2,6 +2,12 @@
 
 My Talk on ember-redux and ember-data example project
 
+
+```sh
+ember new gnatflix
+ember install ember-redux
+```
+
 ## Prerequisites
 
 You will need the following things properly installed on your computer.

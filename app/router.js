@@ -7,6 +7,13 @@ const Router = Ember.Router.extend({
 });
 
 Router.map(function() {
+  this.route('movies');
+  this.route('movie/:movie_id');
+  this.route('admin', { path: 'admin' }, function() {
+    this.route('movie/:movie_id', { path: 'movie' }, function() {
+      this.route('edit');
+    })
+  })
 });
 
 export default Router;
