@@ -46,3 +46,27 @@ function statesToCompute(state) {
   }
 }
 export default connect(statesToCompute)(Ember.Component.extend({}));
+
+
+if (isPresent(fooBar)) {
+  this.set('foobar', 3);
+  return this.doAsyncThing(foo, bar);;
+}
+
+return RSVP.resolve();
+
+
+Ember.Object.create({
+  killSelf: Ember.observer('appWorks', function() {
+    if (this.get('appWorks')) {
+      return;
+    }
+    this.get('willKillSelf', true);
+    this.sendAction('action', this);
+  })
+})
+
+$('blah').on('some-event', (event) => {
+  this.send('someEvent', event)
+})
+

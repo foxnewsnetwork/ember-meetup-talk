@@ -1,5 +1,5 @@
 import DS from 'ember-data';
-
+// session
 export default DS.Model.extend({
   email: DS.attr('string'),
   password: DS.attr('string'),

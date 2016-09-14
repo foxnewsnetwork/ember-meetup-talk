@@ -1,5 +1,5 @@
 import DS from 'ember-data';
-
+// showcase-product
 export default DS.Model.extend({
   title: DS.attr('string'),
   description: DS.attr('string'),
