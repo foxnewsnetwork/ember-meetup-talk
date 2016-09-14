@@ -5,6 +5,7 @@ Here is a rough outline of my talk.
 ## Outline / transcript
 - Introduce the problem of state
   - preamble
+    * (!slide with name and intro) My name is Tom Chen, I am a software engineer here at Sony.
     * let's talk about state. (!slide with bad code) states and managing states in your code is always bad, and seems to consistently lead to (!slide with Hickley), as Rich Hickey puts it, "complecting" your application until you inevitably reach the (!slide with meme matrix) 'technological debt singularity' where every one change or fix to the code-base causes your app to break in two or more other places - (!slide with hydra)
     * (!slide with observer antipattern) Antipatterns like state-mutating observers, actions pretending to be events, async promises in your presentation layer, (!slide with if-else block) side-effect driven if-else blocks, etc., while seemingly friendly and harmless and familiar tenants of OO programming, are actually what eventually drives ember developers to snap and rm -rf their repos and start over. (!slide with scene from shining) I don't know about you, but your business is definitely not going to enjoy that process.
 
