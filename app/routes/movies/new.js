@@ -10,3 +10,17 @@ function model(dispatch) {
 }
 
 export route({model})(Ember.Route.extend());
+
+function model() {
+  return this.store.createRecord('movie');
+}
+
+export Ember.Controller.extend({
+  actions: {
+    saveRecord() {
+      this.get('model').save().then((movie) => {
+        return this.transititonToRoute('movie', movie.id);
+      });
+    }
+  }
+})

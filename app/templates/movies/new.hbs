@@ -1,0 +1,16 @@
+<h1>Traditional Ember</h1>
+<form {{action 'submit' on='submit'}}>
+  {{one-way-input model.title update=(mut model.title)}}
+  {{one-way-input model.rating update=(mut model.rating)}}
+
+  <button type='submit'>Submit</button>
+</form>
+
+
+<h1>Ember with Redux</h1>
+<form {{action (ds-persis-action changeset) on='submit'}}>
+  {{one-way-input changes.title update=(ds-mut-action changeser 'title')}}
+  {{one-way-input changes.rating update=(ds-mut-action changeser 'rating')}}
+
+  <button type='submit'>Submit</button>
+</form>

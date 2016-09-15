@@ -2,7 +2,7 @@
 {{#movie-detail-container}}
 <p>The outlet helper lives in the movie-helper-container</p>
 
-<h1>Movie Detail Page - on route - {{routeName}}</h1>
+<h1>Movie Detail Page with ember-with-redux - on route - {{routeName}}</h1>
 <div>
   <span>{{meta.modelName}} - should be 'movie'</span>
   <span>{{meta.id}} - should be the id of the movie model</span>
@@ -10,6 +10,19 @@
 
 <h2>Movie Details</h2>
 <ul>
-  <li>{{data.title}}</li>
-  <li>{{moment-format data.releasedAt}}</li>
+  <li>{{data.title}} == {{model.title}}</li>
+  <li>{{moment-format data.releasedAt}} == {{moment-format model.releasedAt}}</li>
+</ul>
+
+
+<h1>Movie Detail Page with traditional ember-data</h1>
+<div>
+  <span>{{model.constructor.modelName}} - should be 'movie'</span>
+  <span>{{model.id}} - should be the id of the movie model</span>
+</div>
+
+<h2>Movie Details</h2>
+<ul>
+  <li>{{model.title}}</li>
+  <li>{{moment-format model.releasedAt}}</li>
 </ul>

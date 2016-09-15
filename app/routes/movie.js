@@ -13,3 +13,10 @@ function loadMovie(id) {
 export const MovieRoute = route({
   model: (dispatch, id) => dispatch(loadMovie(id))
 })(Ember.Route.extend());
+
+
+// findRecord routes with ember-data out of the box
+export default Ember.Route.extend({})
+
+// findRecord routes with ember-with-redux
+export default Ember.Route.extend({})
